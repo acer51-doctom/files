@@ -46,10 +46,20 @@ sudo usermod -aG nordvpn $USER
 
 echo "--------------------------------------------------"
 echo "SUCCESS: NordVPN CLI and GUI are installed."
-echo "CRITICAL: You MUST reboot or log out/in for group changes to take effect."
+echo "NOTE: As it is a must to reboot or log out and log back it,"
+echo "We will promptly reboot in 10 seconds. To cancel, immediately press Ctrl+C!!"
+echo "(So you can later reboot on your own)"
 echo "--------------------------------------------------"
 
-read -p "Would you like to reboot now? (y/n): " reboot_now
-if [[ $reboot_now =~ ^[Yy]$ ]]; then
-    sudo reboot
-fi
+# Loop from 10 down to 1
+for i in {10..1}
+do
+    # -n keeps the output on the same line
+    echo -n "$i... "
+    # Wait for 1 second
+    sleep 1
+done
+
+echo "0!"
+echo "Goodbye!"
+sudo reboot
