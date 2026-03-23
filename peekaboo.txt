@@ -1,1 +1,3 @@
 PEEKABOO!
+this is just a stub for the Splatfestival Network User Set Up (yes i love long and complicated names)
+that the script will download :)
